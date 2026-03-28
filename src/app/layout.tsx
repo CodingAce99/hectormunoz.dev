@@ -1,6 +1,6 @@
 // layout.tsx — Root layout: font setup, metadata, and language provider wrapper
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -16,10 +16,57 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://hectormunoz.dev";
+
+export const viewport: Viewport = {
+  themeColor: "#0A0A0F",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Héctor Muñoz Palacios — Backend Developer",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Héctor Muñoz Palacios — Backend Developer",
+    template: "%s — Héctor Muñoz Palacios",
+  },
   description:
-    "Backend Developer with a systems mindset. Java, Spring Boot, hexagonal architecture.",
+    "Backend Developer con mentalidad de sistemas. Java, Spring Boot, arquitectura hexagonal. De administrar infraestructura a construir el software que la gestiona.",
+  keywords: [
+    "Backend Developer",
+    "Java Developer",
+    "Spring Boot",
+    "Hexagonal Architecture",
+    "Portfolio",
+    "Héctor Muñoz Palacios",
+    "Junior Developer Spain",
+    "Full Stack",
+  ],
+  authors: [{ name: "Héctor Muñoz Palacios" }],
+  creator: "Héctor Muñoz Palacios",
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    alternateLocale: "en_US",
+    url: SITE_URL,
+    siteName: "Héctor Muñoz Palacios",
+    title: "Héctor Muñoz Palacios — Backend Developer",
+    description:
+      "Backend Developer con mentalidad de sistemas. Java, Spring Boot, arquitectura hexagonal.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Héctor Muñoz Palacios — Backend Developer",
+    description:
+      "Backend Developer con mentalidad de sistemas. Java, Spring Boot, arquitectura hexagonal.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

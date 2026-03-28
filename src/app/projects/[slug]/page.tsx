@@ -19,9 +19,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = PROJECTS.en.items.find((p) => p.slug === slug);
   if (!project) return {};
+
   return {
-    title: `${project.title} — Héctor Muñoz Palacios`,
+    title: project.title,
     description: project.description,
+    openGraph: {
+      title: `${project.title} — Héctor Muñoz Palacios`,
+      description: project.description,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Héctor Muñoz Palacios`,
+      description: project.description,
+    },
   };
 }
 
