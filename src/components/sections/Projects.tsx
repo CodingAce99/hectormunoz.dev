@@ -1,6 +1,7 @@
 // Projects.tsx — Projects showcase section with Infratrack as the centerpiece
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { PROJECTS } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -77,14 +78,22 @@ export function Projects() {
               <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] md:text-3xl">
                 {project.title}
               </h3>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-heading text-sm text-[var(--accent)] transition-colors hover:text-[var(--accent-hover)]"
-              >
-                GitHub &rarr;
-              </a>
+              <div className="flex items-center gap-4">
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="font-heading text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-hover)]"
+                >
+                  {locale === "es" ? "Ver detalle" : "View details"} &rarr;
+                </Link>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-heading text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                >
+                  GitHub &rarr;
+                </a>
+              </div>
             </div>
 
             {/* Description */}

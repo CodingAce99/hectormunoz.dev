@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { PERSONAL, NAV } from "@/lib/constants";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
@@ -9,6 +10,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export function Header() {
   const { locale } = useLanguage();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [visible, setVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = NAV[locale].links;
@@ -34,7 +37,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Name / scroll to top */}
         <a
-          href="#"
+          href={isHome ? "#" : "/"}
           className="font-heading text-sm font-semibold tracking-wide text-[var(--text-primary)]"
         >
           {PERSONAL.name}
@@ -45,7 +48,7 @@ export function Header() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={isHome ? link.href : `/${link.href}`}
               className="font-heading text-sm text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--text-primary)]"
             >
               {link.label}
@@ -114,7 +117,7 @@ export function Header() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={isHome ? link.href : `/${link.href}`}
                   onClick={handleNavClick}
                   className="font-heading text-lg text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--text-primary)]"
                 >

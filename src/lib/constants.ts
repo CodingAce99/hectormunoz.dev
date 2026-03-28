@@ -395,6 +395,45 @@ export const PROJECTS = {
               "dev (H2), demo (PostgreSQL + SSH real a Alpine), prod.",
           },
         ],
+        detail: {
+          about: [
+            "Infratrack nace de una necesidad real: en entornos IT, el inventario de activos vive en hojas de cálculo desactualizadas mientras el estado real de los servidores solo se conoce conectándose manualmente por SSH. Infratrack cierra esa brecha.",
+            "Es un sistema full-stack que combina una API REST con arquitectura hexagonal, un dashboard en tiempo real, y monitorización SSH automatizada — todo orquestado con Docker y CI/CD.",
+            "Diseñado como proyecto de portfolio, pero construido con estándares de producción: cifrado de credenciales, tests automatizados, perfiles de entorno, y despliegue con un solo comando.",
+          ],
+          architecture: {
+            title: "Arquitectura hexagonal",
+            description:
+              "El dominio de Infratrack no sabe que Spring existe. Los puertos definen contratos, los adaptadores implementan la infraestructura. Cambiar de REST a gRPC o de PostgreSQL a MongoDB no toca una línea del dominio.",
+            layers: [
+              {
+                name: "Dominio",
+                description:
+                  "Entidades, Value Objects, Aggregates y Domain Events. Java puro, zero imports de framework.",
+              },
+              {
+                name: "Puertos",
+                description:
+                  "Interfaces que definen los contratos: AssetRepository, SshPort, EventPublisher.",
+              },
+              {
+                name: "Adaptadores",
+                description:
+                  "Implementaciones intercambiables: JPA, REST Controllers, SSHJ, In-Memory para tests.",
+              },
+              {
+                name: "Aplicación",
+                description:
+                  "Servicios que orquestan el dominio. AssetService, MonitoringService. Sin lógica de negocio, solo coordinación.",
+              },
+            ],
+          },
+          cta: {
+            label: "Ver en GitHub",
+            href: "https://github.com/CodingAce99/infratrack",
+          },
+          backLabel: "← Volver al portfolio",
+        },
       },
     ],
   },
@@ -462,6 +501,45 @@ export const PROJECTS = {
               "dev (H2), demo (PostgreSQL + real SSH to Alpine), prod.",
           },
         ],
+        detail: {
+          about: [
+            "Infratrack was born from a real need: in IT environments, asset inventories live in outdated spreadsheets while the actual state of servers is only known by manually connecting via SSH. Infratrack bridges that gap.",
+            "It's a full-stack system combining a REST API with hexagonal architecture, a real-time dashboard, and automated SSH monitoring — all orchestrated with Docker and CI/CD.",
+            "Designed as a portfolio project, but built with production standards: credential encryption, automated tests, environment profiles, and single-command deployment.",
+          ],
+          architecture: {
+            title: "Hexagonal architecture",
+            description:
+              "Infratrack's domain doesn't know Spring exists. Ports define contracts, adapters implement infrastructure. Switching from REST to gRPC or PostgreSQL to MongoDB doesn't touch a single line of domain code.",
+            layers: [
+              {
+                name: "Domain",
+                description:
+                  "Entities, Value Objects, Aggregates, and Domain Events. Pure Java, zero framework imports.",
+              },
+              {
+                name: "Ports",
+                description:
+                  "Interfaces defining contracts: AssetRepository, SshPort, EventPublisher.",
+              },
+              {
+                name: "Adapters",
+                description:
+                  "Interchangeable implementations: JPA, REST Controllers, SSHJ, In-Memory for tests.",
+              },
+              {
+                name: "Application",
+                description:
+                  "Services orchestrating the domain. AssetService, MonitoringService. No business logic, only coordination.",
+              },
+            ],
+          },
+          cta: {
+            label: "View on GitHub",
+            href: "https://github.com/CodingAce99/infratrack",
+          },
+          backLabel: "← Back to portfolio",
+        },
       },
     ],
   },
