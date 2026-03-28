@@ -129,3 +129,199 @@ export type LocaleContent<T> = {
   es: T;
   en: T;
 };
+
+// ============================================
+// TECH STACK
+// ============================================
+
+export const TECH_STACK = {
+  es: {
+    sectionLabel: "Stack técnico",
+    sectionTitle: "Con qué construyo",
+    categories: [
+      {
+        name: "Backend",
+        technologies: [
+          { name: "Java", icon: "SiOpenjdk" },
+          { name: "Spring Boot", icon: "SiSpring" },
+        ],
+      },
+      {
+        name: "Frontend",
+        technologies: [
+          { name: "React", icon: "SiReact" },
+          { name: "Next.js", icon: "SiNextdotjs" },
+          { name: "TypeScript", icon: "SiTypescript" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss" },
+        ],
+      },
+      {
+        name: "Base de datos",
+        technologies: [
+          { name: "PostgreSQL", icon: "SiPostgresql" },
+        ],
+      },
+      {
+        name: "Infraestructura",
+        technologies: [
+          { name: "Docker", icon: "SiDocker" },
+          { name: "GitHub Actions", icon: "SiGithubactions" },
+          { name: "Linux", icon: "SiLinux" },
+        ],
+      },
+      {
+        name: "Testing",
+        technologies: [
+          { name: "JUnit 5", icon: "SiJunit5" },
+        ],
+      },
+    ],
+  },
+  en: {
+    sectionLabel: "Tech stack",
+    sectionTitle: "What I build with",
+    categories: [
+      {
+        name: "Backend",
+        technologies: [
+          { name: "Java", icon: "SiOpenjdk" },
+          { name: "Spring Boot", icon: "SiSpring" },
+        ],
+      },
+      {
+        name: "Frontend",
+        technologies: [
+          { name: "React", icon: "SiReact" },
+          { name: "Next.js", icon: "SiNextdotjs" },
+          { name: "TypeScript", icon: "SiTypescript" },
+          { name: "Tailwind CSS", icon: "SiTailwindcss" },
+        ],
+      },
+      {
+        name: "Database",
+        technologies: [
+          { name: "PostgreSQL", icon: "SiPostgresql" },
+        ],
+      },
+      {
+        name: "Infrastructure",
+        technologies: [
+          { name: "Docker", icon: "SiDocker" },
+          { name: "GitHub Actions", icon: "SiGithubactions" },
+          { name: "Linux", icon: "SiLinux" },
+        ],
+      },
+      {
+        name: "Testing",
+        technologies: [
+          { name: "JUnit 5", icon: "SiJunit5" },
+        ],
+      },
+    ],
+  },
+} as const;
+
+// ============================================
+// TIMELINE
+// ============================================
+
+export const TIMELINE = {
+  es: {
+    sectionLabel: "Trayectoria",
+    sectionTitle: "De dónde vengo",
+    entries: [
+      {
+        type: "education" as const,
+        date: "2020 – 2022",
+        title: "ASIR",
+        subtitle: "Administración de Sistemas Informáticos en Red",
+        institution: "Aula Campus, Valencia",
+        description: "Nota: 9 · Mejor Proyecto de Fin de Grado",
+      },
+      {
+        type: "work" as const,
+        date: "Mar 2021 – May 2022",
+        title: "Técnico de soporte IT",
+        subtitle: "ISAGRI España — Valencia",
+        institution: null,
+        description:
+          "Resolución autónoma de 5-15 incidencias/día en software de gestión empresarial. Diagnóstico remoto y resolución en primera línea sin escalado.",
+      },
+      {
+        type: "education" as const,
+        date: "2023 – 2025",
+        title: "DAM",
+        subtitle: "Desarrollo de Aplicaciones Multiplataforma",
+        institution: "Aula Campus, Valencia",
+        description: "Nota: 9",
+      },
+      {
+        type: "work" as const,
+        date: "Mar – Jun 2025",
+        title: "Desarrollador de aplicaciones",
+        subtitle: "Hospital La Pedrera — Dénia",
+        institution: null,
+        description:
+          "Aplicación de rehabilitación clínica con requisitos funcionales definidos por equipo médico en entorno sanitario real.",
+      },
+    ],
+    certifications: {
+      title: "Certificaciones",
+      items: [
+        "Oracle Java SE",
+        "Oracle SQL",
+        "Cisco CCNA 1-4",
+        "NDG Linux Essentials",
+      ],
+    },
+  },
+  en: {
+    sectionLabel: "Background",
+    sectionTitle: "Where I come from",
+    entries: [
+      {
+        type: "education" as const,
+        date: "2020 – 2022",
+        title: "ASIR",
+        subtitle: "Network Systems Administration",
+        institution: "Aula Campus, Valencia",
+        description: "Grade: 9/10 · Best Final Year Project",
+      },
+      {
+        type: "work" as const,
+        date: "Mar 2021 – May 2022",
+        title: "IT Support Technician",
+        subtitle: "ISAGRI Spain — Valencia",
+        institution: null,
+        description:
+          "Autonomous resolution of 5-15 daily incidents in enterprise management software. Remote diagnosis and first-line resolution without escalation.",
+      },
+      {
+        type: "education" as const,
+        date: "2023 – 2025",
+        title: "DAM",
+        subtitle: "Multi-platform Application Development",
+        institution: "Aula Campus, Valencia",
+        description: "Grade: 9/10",
+      },
+      {
+        type: "work" as const,
+        date: "Mar – Jun 2025",
+        title: "Application Developer",
+        subtitle: "Hospital La Pedrera — Dénia",
+        institution: null,
+        description:
+          "Clinical rehabilitation app with functional requirements defined by medical staff in a real healthcare environment.",
+      },
+    ],
+    certifications: {
+      title: "Certifications",
+      items: [
+        "Oracle Java SE",
+        "Oracle SQL",
+        "Cisco CCNA 1-4",
+        "NDG Linux Essentials",
+      ],
+    },
+  },
+} as const;
