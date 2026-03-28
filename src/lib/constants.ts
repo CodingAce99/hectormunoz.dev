@@ -325,3 +325,144 @@ export const TIMELINE = {
     },
   },
 } as const;
+
+// ============================================
+// PROJECTS
+// ============================================
+
+export const PROJECTS = {
+  es: {
+    sectionLabel: "Proyectos",
+    sectionTitle: "Lo que he construido",
+    items: [
+      {
+        slug: "infratrack",
+        title: "Infratrack",
+        description:
+          "Sistema de inventario y monitorización de infraestructura IT. Fuente única de verdad para activos, credenciales y métricas en tiempo real.",
+        connection:
+          "La combinación de mis dos formaciones en un solo proyecto. Administración de sistemas + desarrollo, trabajando juntos.",
+        github: "https://github.com/CodingAce99/infratrack",
+        stack: [
+          "Java 21",
+          "Spring Boot 3.5",
+          "PostgreSQL 17",
+          "Docker",
+          "GitHub Actions",
+          "Next.js 15",
+          "TypeScript",
+          "Tailwind CSS v4",
+        ],
+        highlights: [
+          {
+            title: "Arquitectura hexagonal",
+            description:
+              "Dominio Java puro sin imports de framework. Adaptadores intercambiables para REST, JPA, SSH e in-memory.",
+          },
+          {
+            title: "Monitorización SSH real",
+            description:
+              "SSHJ a contenedores Alpine. CPU, memoria y disco cada 60s, paralelizado con Virtual Threads.",
+          },
+          {
+            title: "Seguridad por construcción",
+            description:
+              "AES-256-GCM en reposo. AssetResponse sin campo password — no oculto, ausente.",
+          },
+          {
+            title: "Domain Events asíncronos",
+            description:
+              "Bus desacoplado con Spring ApplicationEventPublisher. Listeners extensibles sin tocar código existente.",
+          },
+          {
+            title: "CI/CD completo",
+            description:
+              "GitHub Actions en verde. Build multi-stage. docker-compose up levanta 4 servicios.",
+          },
+          {
+            title: "Dashboard en tiempo real",
+            description:
+              "Next.js 15 + TypeScript + Tailwind. Polling cada 60s con SWR, sparklines Recharts.",
+          },
+          {
+            title: "91 tests automatizados",
+            description:
+              "JUnit 5 + Mockito: dominio, servicios, controladores REST y tests de seguridad dedicados.",
+          },
+          {
+            title: "Tres perfiles",
+            description:
+              "dev (H2), demo (PostgreSQL + SSH real a Alpine), prod.",
+          },
+        ],
+      },
+    ],
+  },
+  en: {
+    sectionLabel: "Projects",
+    sectionTitle: "What I've built",
+    items: [
+      {
+        slug: "infratrack",
+        title: "Infratrack",
+        description:
+          "IT infrastructure inventory and monitoring system. Single source of truth for assets, credentials, and real-time metrics.",
+        connection:
+          "Both my backgrounds combined in one project. Systems administration + development, working together.",
+        github: "https://github.com/CodingAce99/infratrack",
+        stack: [
+          "Java 21",
+          "Spring Boot 3.5",
+          "PostgreSQL 17",
+          "Docker",
+          "GitHub Actions",
+          "Next.js 15",
+          "TypeScript",
+          "Tailwind CSS v4",
+        ],
+        highlights: [
+          {
+            title: "Hexagonal architecture",
+            description:
+              "Pure Java domain with no framework imports. Interchangeable adapters for REST, JPA, SSH, and in-memory.",
+          },
+          {
+            title: "Real SSH monitoring",
+            description:
+              "SSHJ to Alpine containers. CPU, memory, and disk every 60s, parallelized with Virtual Threads.",
+          },
+          {
+            title: "Security by construction",
+            description:
+              "AES-256-GCM at rest. AssetResponse has no password field — not hidden, absent.",
+          },
+          {
+            title: "Async Domain Events",
+            description:
+              "Decoupled bus with Spring ApplicationEventPublisher. Extensible listeners without touching existing code.",
+          },
+          {
+            title: "Full CI/CD",
+            description:
+              "GitHub Actions green. Multi-stage build. docker-compose up spins up 4 services.",
+          },
+          {
+            title: "Real-time dashboard",
+            description:
+              "Next.js 15 + TypeScript + Tailwind. 60s polling with SWR, Recharts sparklines.",
+          },
+          {
+            title: "91 automated tests",
+            description:
+              "JUnit 5 + Mockito: domain, services, REST controllers, and dedicated security tests.",
+          },
+          {
+            title: "Three profiles",
+            description:
+              "dev (H2), demo (PostgreSQL + real SSH to Alpine), prod.",
+          },
+        ],
+      },
+    ],
+  },
+} as const;
