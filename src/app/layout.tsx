@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
-import { LanguageToggle } from "@/components/ui/LanguageToggle";
+import { Header } from "@/components/layout/Header";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -32,9 +32,8 @@ export default function RootLayout({
     <html lang="es" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body>
         <LanguageProvider>
+          <Header />
           {children}
-          {/* Temporary position — will move to header in Phase 5 */}
-          <LanguageToggle />
         </LanguageProvider>
       </body>
     </html>

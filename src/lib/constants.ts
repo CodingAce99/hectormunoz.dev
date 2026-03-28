@@ -22,8 +22,8 @@ export const HERO = {
     subtitle:
       "De administrar infraestructura a construir el software que la gestiona. Fundamentos sólidos, arquitectura limpia, visión completa.",
     cta: {
-      primary: { label: "Ver mi trabajo", href: "#proyectos" },
-      secondary: { label: "Contactar", href: "#contacto" },
+      primary: { label: "Ver mi trabajo", href: "#projects" },
+      secondary: { label: "Contactar", href: "#contact" },
     },
   },
   en: {
@@ -463,6 +463,64 @@ export const PROJECTS = {
           },
         ],
       },
+    ],
+  },
+} as const;
+
+// ============================================
+// CONTACT
+// ============================================
+
+export const CONTACT = {
+  es: {
+    sectionLabel: "Contacto",
+    sectionTitle: "¿Hablamos?",
+    description:
+      "Estoy buscando mi primera posición como desarrollador. Si crees que puedo aportar valor a tu equipo, me encantaría hablar.",
+    links: {
+      github: { label: "GitHub", href: "https://github.com/CodingAce99" },
+      linkedin: {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/hector-munoz-palacios/",
+      },
+      email: { label: "hectormp2001@gmail.com", href: "mailto:hectormp2001@gmail.com" },
+    },
+  },
+  en: {
+    sectionLabel: "Contact",
+    sectionTitle: "Let's talk.",
+    description:
+      "I'm looking for my first developer position. If you think I can bring value to your team, I'd love to talk.",
+    links: {
+      github: { label: "GitHub", href: "https://github.com/CodingAce99" },
+      linkedin: {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/hector-munoz-palacios/",
+      },
+      email: { label: "hectormp2001@gmail.com", href: "mailto:hectormp2001@gmail.com" },
+    },
+  },
+} as const;
+
+// ============================================
+// NAV
+// ============================================
+
+export const NAV = {
+  es: {
+    links: [
+      { label: "Sobre mí", href: "#about" },
+      { label: "Filosofía", href: "#approach" },
+      { label: "Proyectos", href: "#projects" },
+      { label: "Contacto", href: "#contact" },
+    ],
+  },
+  en: {
+    links: [
+      { label: "About", href: "#about" },
+      { label: "Philosophy", href: "#approach" },
+      { label: "Projects", href: "#projects" },
+      { label: "Contact", href: "#contact" },
     ],
   },
 } as const;

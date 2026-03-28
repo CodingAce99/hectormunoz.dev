@@ -8,8 +8,7 @@ export function LanguageToggle() {
   const { locale, setLocale } = useLanguage();
 
   return (
-    // Temporal position — will be moved to Header in Phase 5
-    <div className="fixed top-6 right-6 z-50 flex items-center gap-2">
+    <div className="flex items-center gap-2">
       <button
         onClick={() => setLocale("es")}
         className={`
