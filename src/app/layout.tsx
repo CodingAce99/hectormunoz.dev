@@ -1,29 +1,41 @@
+// layout.tsx — Root layout: font setup, metadata, and language provider wrapper
+
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { LanguageToggle } from "@/components/ui/LanguageToggle";
 
 const spaceGrotesk = Space_Grotesk({
-  subsets:  ["latin"],
-  weight:   ["500", "700"],
   variable: "--font-space-grotesk",
+  subsets: ["latin"],
 });
 
 const inter = Inter({
-  subsets:  ["latin"],
   variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title:       "Héctor Muñoz Palacios — Java Backend Developer",
+  title: "Héctor Muñoz Palacios — Backend Developer",
   description:
-    "Portfolio de Héctor Muñoz Palacios. Java Backend Developer especializado en arquitectura hexagonal, Spring Boot y CI/CD. Disponible en Valencia y Madrid.",
+    "Backend Developer with a systems mindset. Java, Spring Boot, hexagonal architecture.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
+    // lang="es" is the SSR default — LanguageContext updates it on the client
     <html lang="es" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="font-body bg-background text-primary antialiased">
-        <main>{children}</main>
+      <body>
+        <LanguageProvider>
+          {children}
+          {/* Temporary position — will move to header in Phase 5 */}
+          <LanguageToggle />
+        </LanguageProvider>
       </body>
     </html>
   );
