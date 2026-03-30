@@ -66,8 +66,14 @@ export function TechStack() {
   };
 
   return (
-    <section id="stack" className="py-20 md:py-28 lg:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+    <section
+      id="stack"
+      className="py-16 md:py-20 lg:py-24"
+      style={{
+        background: "linear-gradient(to bottom, var(--background), var(--surface) 8%, var(--surface) 92%, var(--background))",
+      }}
+    >
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           label={content.sectionLabel}
           title={content.sectionTitle}

@@ -197,19 +197,18 @@ export function ProjectDetailContent({ slug }: { slug: string }) {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 gap-4 md:grid-cols-2"
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6"
           variants={staggerContainer}
         >
-          {project.highlights.map((highlight) => (
+          {project.highlights.map((highlight, hIndex) => (
             <motion.div
-              key={highlight.title}
-              className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors duration-300 hover:border-[var(--accent)]/30"
+              key={hIndex}
               variants={highlightItem}
             >
-              <h4 className="mb-1 font-heading text-sm font-semibold text-[var(--text-primary)]">
+              <h4 className="font-heading text-sm font-semibold text-[var(--text-primary)] mb-1">
                 {highlight.title}
               </h4>
-              <p className="text-xs leading-relaxed text-[var(--text-secondary)] md:text-sm">
+              <p className="text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed">
                 {highlight.description}
               </p>
             </motion.div>

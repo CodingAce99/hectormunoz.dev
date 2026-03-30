@@ -21,13 +21,13 @@ export default async function Image({
       (
         <div
           style={{
-            background: "#0A0A0F",
+            background: "#000000",
             width: "100%",
             height: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#E8E8ED",
+            color: "#FAFAFA",
             fontSize: 48,
           }}
         >
@@ -42,7 +42,7 @@ export default async function Image({
     (
       <div
         style={{
-          background: "#0A0A0F",
+          background: "#000000",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -54,7 +54,7 @@ export default async function Image({
         <div
           style={{
             fontSize: 20,
-            color: "#8888A0",
+            color: "#A1A1AA",
             marginBottom: 16,
           }}
         >
@@ -64,7 +64,7 @@ export default async function Image({
           style={{
             fontSize: 56,
             fontWeight: 700,
-            color: "#E8E8ED",
+            color: "#FAFAFA",
             marginBottom: 24,
           }}
         >
@@ -73,7 +73,7 @@ export default async function Image({
         <div
           style={{
             fontSize: 22,
-            color: "#8888A0",
+            color: "#A1A1AA",
             maxWidth: 700,
             lineHeight: 1.4,
             marginBottom: 32,
@@ -94,8 +94,8 @@ export default async function Image({
               style={{
                 padding: "6px 16px",
                 borderRadius: "9999px",
-                border: "1px solid #1E1E2E",
-                color: "#8888A0",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+                color: "#A1A1AA",
                 fontSize: 14,
               }}
             >

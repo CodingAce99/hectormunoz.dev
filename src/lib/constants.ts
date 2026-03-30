@@ -18,19 +18,19 @@ export const PERSONAL = {
 export const HERO = {
   es: {
     badge: "Disponible para trabajar",
-    headline: "Backend Developer\ncon mentalidad de sistemas",
+    headline: "Backend Developer.\nConstruido desde la base.",
     subtitle:
-      "De administrar infraestructura a construir el software que la gestiona. Fundamentos sólidos, arquitectura limpia, visión completa.",
+      "Java · Spring Boot · Arquitectura Hexagonal. Formado en sistemas, construido para producción.",
     cta: {
-      primary: { label: "Ver mi trabajo", href: "#projects" },
+      primary: { label: "Ver proyectos", href: "#projects" },
       secondary: { label: "Contactar", href: "#contact" },
     },
   },
   en: {
     badge: "Open to work",
-    headline: "Backend Developer\nwith a systems mindset",
+    headline: "Backend Developer.\nBuilt from the ground up.",
     subtitle:
-      "From managing infrastructure to building the software that runs it. Strong foundations, clean architecture, full-stack vision.",
+      "Java · Spring Boot · Hexagonal Architecture. Trained in systems, built for production.",
     cta: {
       primary: { label: "See my work", href: "#projects" },
       secondary: { label: "Get in touch", href: "#contact" },
@@ -40,34 +40,40 @@ export const HERO = {
 
 export const ABOUT = {
   es: {
-    sectionLabel: "Sobre mí",
-    sectionTitle: "De la infraestructura al código",
+    sectionLabel: "Mi historia",
+    sectionTitle: "No empecé programando. Empecé entendiendo.",
     paragraphs: [
-      "Empecé por donde muchos developers nunca pasan: la infraestructura. Administración de sistemas, redes, soporte técnico resolviendo incidencias reales en producción. Ahí entendí cómo funciona todo por debajo.",
-      "La ciberseguridad me abrió los ojos. Para proteger sistemas de verdad, necesitaba entender cómo se construyen desde dentro. Ese fue el salto al desarrollo — y no fue un cambio de rumbo, fue la evolución natural.",
-      "Hoy combino ambos mundos. No soy un developer que aprendió a hacer deploy. Soy alguien que entiende el camino completo del código al servidor, y construyo software con esa visión. Uso IA como herramienta de productividad, pero los fundamentos no se delegan.",
+      "La mayoría de developers llegan a su primer equipo sabiendo escribir código. Pero no han tratado con un usuario real. No han diagnosticado un problema bajo presión. No entienden qué pasa entre el código y el servidor. Mi camino fue al revés.",
+      "Mi primer trabajo fue en soporte técnico — 5 a 15 incidencias al día, diagnóstico remoto, resolución en primera línea sin escalado. No era glamuroso. Pero cada llamada me enseñaba algo que ningún tutorial puede: a entender lo que el usuario realmente necesita, no lo que te describe. Esa habilidad es la misma que hoy aplico para entender requisitos antes de escribir una línea.",
+      "En paralelo me formé en sistemas y redes — certificaciones Cisco CCNA y Linux. Entendía cómo funcionaban las máquinas por dentro. Pero la curiosidad me empujó más lejos: quería entender cómo funcionan las cosas a un nivel más profundo. Y descubrí algo que cambió mi dirección — no entiendes de verdad cómo funciona un ordenador hasta que programas.",
+      "Ese fue el salto. Me matriculé en Desarrollo de Aplicaciones Multiplataforma. Y desde el primer proyecto decidí que no quería escribir código que simplemente funcionara — quería construir software pensado para producción, no para aprobar.",
+      "El resultado fue Infratrack — un sistema enterprise-grade diseñado y construido de cero, sin equipo ni guía. Arquitectura hexagonal, 91 tests, cifrado AES-256-GCM, CI/CD en verde. No porque me lo pidieran. Porque creo que así se construye software.",
+      "Todo lo que tu equipo necesitaría enseñar a un junior — entender usuarios, pensar en sistemas, trabajar con autonomía — yo lo aprendí antes de escribir mi primera clase.",
     ],
   },
   en: {
-    sectionLabel: "About me",
-    sectionTitle: "From infrastructure to code",
+    sectionLabel: "My story",
+    sectionTitle: "I didn't start by coding. I started by understanding.",
     paragraphs: [
-      "I started where most developers never go: infrastructure. Systems administration, networking, real technical support solving production incidents. That's where I understood how everything works underneath.",
-      "Cybersecurity opened my eyes. To truly protect systems, I needed to understand how they're built from the inside. That was my shift into development — not a career change, but a natural evolution.",
-      "Today I combine both worlds. I'm not a developer who learned to deploy. I'm someone who understands the full path from code to server, and I build software with that perspective. I use AI as a productivity tool, but the fundamentals are never delegated.",
+      "Most developers arrive at their first team knowing how to write code. But they've never dealt with a real user. Never diagnosed a problem under pressure. Don't understand what happens between code and server. My path was the opposite.",
+      "My first job was in tech support — 5 to 15 incidents per day, remote diagnosis, first-line resolution with no escalation. It wasn't glamorous. But every call taught me something no tutorial can: how to understand what the user actually needs, not what they describe. That's the same skill I apply today to understand requirements before writing a single line.",
+      "In parallel, I trained in systems and networking — Cisco CCNA and Linux certifications. I understood how machines worked from the inside. But curiosity pushed me further: I wanted to understand how things work at a deeper level. And I discovered something that changed my direction — you don't truly understand how a computer works until you program.",
+      "That was the turning point. I enrolled in Application Development. And from my very first project I decided I didn't want to write code that merely worked — I wanted to build software designed for production, not for passing.",
+      "The result was Infratrack — an enterprise-grade system designed and built from scratch, with no team and no guidance. Hexagonal architecture, 91 tests, AES-256-GCM encryption, CI/CD green. Not because it was required. Because I believe that's how software should be built.",
+      "Everything your team would need to teach a junior — understanding users, thinking in systems, working autonomously — I learned before writing my first class.",
     ],
   },
 } as const;
 
 export const APPROACH = {
   es: {
-    sectionLabel: "Filosofía",
-    sectionTitle: "Cómo construyo software",
+    sectionLabel: "Cómo trabajo",
+    sectionTitle: "Lo que tu equipo recibe",
     principles: [
       {
         title: "Arquitectura con intención",
         description:
-          "No escribo código y luego organizo. Diseño la estructura primero. El dominio es puro, el framework es un detalle de implementación.",
+          "Pienso en la estructura antes de escribir la primera línea. La arquitectura se adapta al problema — no al revés. El dominio manda, el framework sirve.",
       },
       {
         title: "Testing como disciplina",
@@ -80,25 +86,30 @@ export const APPROACH = {
           "La seguridad no es una feature que se añade al final. Es una restricción del diseño desde el primer modelo de datos.",
       },
       {
-        title: "Ownership completo",
+        title: "Ownership de principio a fin",
         description:
-          "Entiendo el camino del código al servidor. Docker, CI/CD, Linux. Si no puedo desplegarlo, no está hecho.",
+          "No entrego código y me desentiendo. Entiendo el camino completo: Docker, CI/CD, Linux, despliegue. Lo que construyo, lo pongo en producción.",
       },
       {
         title: "Código que se explica solo",
         description:
           "Escribo para el siguiente developer que lo lea. Nombres claros, responsabilidades separadas, estructura predecible.",
       },
+      {
+        title: "IA con criterio de ingeniero",
+        description:
+          "Dirijo herramientas de IA con arquitectura definida, restricciones claras y revisión de cada línea. Multiplico la velocidad sin delegar las decisiones. Esta web la construí así.",
+      },
     ],
   },
   en: {
-    sectionLabel: "Philosophy",
-    sectionTitle: "How I build software",
+    sectionLabel: "How I work",
+    sectionTitle: "What your team gets",
     principles: [
       {
         title: "Architecture with intention",
         description:
-          "I don't write code and organize later. I design the structure first. The domain stays pure — the framework is an implementation detail.",
+          "I think about structure before writing the first line. Architecture adapts to the problem — not the other way around. The domain leads, the framework serves.",
       },
       {
         title: "Testing as discipline",
@@ -111,14 +122,19 @@ export const APPROACH = {
           "Security isn't a feature you bolt on at the end. It's a design constraint from the very first data model.",
       },
       {
-        title: "Full ownership",
+        title: "End-to-end ownership",
         description:
-          "I understand the path from code to server. Docker, CI/CD, Linux. If I can't deploy it, it's not finished.",
+          "I don't hand off code and walk away. I understand the full path: Docker, CI/CD, Linux, deployment. What I build, I ship to production.",
       },
       {
         title: "Self-documenting code",
         description:
           "I write for the next developer who reads it. Clear naming, separated concerns, predictable structure.",
+      },
+      {
+        title: "AI with engineering judgment",
+        description:
+          "I direct AI tools with defined architecture, clear constraints, and line-by-line review. I multiply speed without delegating decisions. I built this site that way.",
       },
     ],
   },
@@ -333,7 +349,7 @@ export const TIMELINE = {
 export const PROJECTS = {
   es: {
     sectionLabel: "Proyectos",
-    sectionTitle: "Lo que he construido",
+    sectionTitle: "No lo digo — lo demuestro",
     items: [
       {
         slug: "infratrack",
@@ -341,7 +357,7 @@ export const PROJECTS = {
         description:
           "Sistema de inventario y monitorización de infraestructura IT. Fuente única de verdad para activos, credenciales y métricas en tiempo real.",
         connection:
-          "La combinación de mis dos formaciones en un solo proyecto. Administración de sistemas + desarrollo, trabajando juntos.",
+          "Todo lo que dije arriba, aplicado en un solo proyecto. Sin equipo, sin guía de empresa, sin excusas.",
         github: "https://github.com/CodingAce99/infratrack",
         stack: [
           "Java 21",
@@ -439,7 +455,7 @@ export const PROJECTS = {
   },
   en: {
     sectionLabel: "Projects",
-    sectionTitle: "What I've built",
+    sectionTitle: "I don't just say it — I prove it",
     items: [
       {
         slug: "infratrack",
@@ -447,7 +463,7 @@ export const PROJECTS = {
         description:
           "IT infrastructure inventory and monitoring system. Single source of truth for assets, credentials, and real-time metrics.",
         connection:
-          "Both my backgrounds combined in one project. Systems administration + development, working together.",
+          "Everything I said above, applied in one project. No team, no company guidance, no excuses.",
         github: "https://github.com/CodingAce99/infratrack",
         stack: [
           "Java 21",
@@ -551,10 +567,10 @@ export const PROJECTS = {
 
 export const CONTACT = {
   es: {
-    sectionLabel: "Contacto",
-    sectionTitle: "¿Hablamos?",
+    sectionLabel: "Siguiente paso",
+    sectionTitle: "Estoy disponible ahora.",
     description:
-      "Estoy buscando mi primera posición como desarrollador. Si crees que puedo aportar valor a tu equipo, me encantaría hablar.",
+      "Un developer con doble formación, experiencia real con usuarios, y un proyecto enterprise-grade construido de cero. Si eso encaja con lo que buscas, el siguiente paso es tuyo.",
     links: {
       github: { label: "GitHub", href: "https://github.com/CodingAce99" },
       linkedin: {
@@ -565,10 +581,10 @@ export const CONTACT = {
     },
   },
   en: {
-    sectionLabel: "Contact",
-    sectionTitle: "Let's talk.",
+    sectionLabel: "Next step",
+    sectionTitle: "I'm available now.",
     description:
-      "I'm looking for my first developer position. If you think I can bring value to your team, I'd love to talk.",
+      "A developer with dual training, real experience with users, and an enterprise-grade project built from scratch. If that fits what you're looking for, the next step is yours.",
     links: {
       github: { label: "GitHub", href: "https://github.com/CodingAce99" },
       linkedin: {
@@ -587,16 +603,16 @@ export const CONTACT = {
 export const NAV = {
   es: {
     links: [
-      { label: "Sobre mí", href: "#about" },
-      { label: "Filosofía", href: "#approach" },
+      { label: "Mi historia", href: "#about" },
+      { label: "Cómo trabajo", href: "#approach" },
       { label: "Proyectos", href: "#projects" },
       { label: "Contacto", href: "#contact" },
     ],
   },
   en: {
     links: [
-      { label: "About", href: "#about" },
-      { label: "Philosophy", href: "#approach" },
+      { label: "My story", href: "#about" },
+      { label: "How I work", href: "#approach" },
       { label: "Projects", href: "#projects" },
       { label: "Contact", href: "#contact" },
     ],

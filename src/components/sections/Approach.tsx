@@ -1,4 +1,4 @@
-// Approach.tsx — Approach section displaying 5 engineering principles as animated cards
+// Approach.tsx — Approach section displaying engineering principles as editorial list
 
 "use client";
 
@@ -12,7 +12,6 @@ export function Approach() {
   const { locale } = useLanguage();
   const content = APPROACH[locale];
 
-  // Container variant — orchestrates children timing via staggerChildren.
   const container: import("framer-motion").Variants = {
     hidden: {},
     visible: {
@@ -22,7 +21,6 @@ export function Approach() {
     },
   };
 
-  // Item variant — each paragraph fades and slides up individually.
   const item: import("framer-motion").Variants = {
     hidden: {
       opacity: reduced ? 1 : 0,
@@ -39,17 +37,15 @@ export function Approach() {
   };
 
 return (
-  <section id="approach" className="py-20 md:py-28 lg:py-32">
-    <div className="mx-auto max-w-5xl px-6">
+  <section id="approach" className="py-16 md:py-20 lg:py-24">
+    <div className="mx-auto max-w-6xl px-6">
 
-      {/* Container — everything inside receives the stagger timing */}
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        {/* SectionHeading animates as the first child in the stagger sequence */}
         <motion.div variants={item}>
           <SectionHeading
             label={content.sectionLabel}
@@ -57,32 +53,26 @@ return (
           />
         </motion.div>
 
-        {/* Cards wrapper — flexbox centers the incomplete last row naturally */}
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="space-y-8 md:space-y-10">
           {content.principles.map((principle, index) => (
             <motion.div
               key={index}
               variants={item}
-              className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+              className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-6 gap-y-2"
             >
-              {/* Card */}
-              <div className="h-full rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors duration-300 hover:border-[var(--accent)] md:p-8">
+              {/* Number */}
+              <p className="text-[var(--accent)] font-heading text-lg md:text-xl font-semibold md:text-right md:w-12">
+                {String(index + 1).padStart(2, "0")}
+              </p>
 
-                {/* Zero-padded number: 01, 02, 03... */}
-                <p className="mb-4 font-heading text-sm font-medium text-[var(--accent)]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-
-                {/* Principle title */}
-                <p className="mb-3 font-heading text-xl font-semibold text-[var(--text-primary)]">
+              {/* Content */}
+              <div>
+                <h3 className="font-heading text-lg md:text-xl font-semibold text-[var(--text-primary)] mb-2">
                   {principle.title}
-                </p>
-
-                {/* Principle description */}
-                <p className="text-sm leading-relaxed text-[var(--text-secondary)] md:text-base">
+                </h3>
+                <p className="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed max-w-2xl">
                   {principle.description}
                 </p>
-
               </div>
             </motion.div>
           ))}

@@ -19,7 +19,7 @@ const inter = Inter({
 const SITE_URL = "https://hectormunoz.dev";
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0F",
+  themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
 };

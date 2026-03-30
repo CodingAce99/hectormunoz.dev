@@ -36,14 +36,14 @@ src/
 ### Color tokens (CSS variables in globals.css)
 
 ```
---background:     #0A0A0F     (near-black, blue-tinted)
---surface:        #12121A     (elevated surfaces, cards)
---border:         #1E1E2E     (subtle borders)
---text-primary:   #E8E8ED     (main text, not pure white)
---text-secondary: #8888A0     (secondary text)
---accent:         #5558E3     (indigo, primary accent)
---accent-hover:   #6366F1     (hover state)
---accent-glow:    rgba(85, 88, 227, 0.18)  (glows, backgrounds)
+--background:     #000000     (pure black)
+--surface:        #050505     (near-black, elevated surfaces)
+--border:         rgba(255, 255, 255, 0.08)  (subtle white borders)
+--text-primary:   #FAFAFA     (main text, near-white)
+--text-secondary: #A1A1AA     (zinc-400, secondary text)
+--accent:         #6366F1     (indigo-500, primary accent)
+--accent-hover:   #818CF8     (indigo-400, hover state)
+--accent-glow:    rgba(99, 102, 241, 0.10)   (glows, backgrounds)
 ```
 
 ### Typography
@@ -100,7 +100,7 @@ const item: import("framer-motion").Variants = {
 ## Frontend design principles
 
 - **Dark, developer vibe.** Atmospheric, technical, memorable. Not generic.
-- **Bold but intentional.** Saturated indigo accent with deep near-black background creates depth.
+- **Bold but intentional.** Indigo accent with zinc-black background creates depth.
 - **Motion with purpose.** Staggered reveals on scroll. No gratuitous animation. High-impact page load.
 - **Spatial composition.** Generous padding (`py-20 md:py-28 lg:py-32`), breathing room between sections.
 - **No generic AI aesthetics.** No stock photos, no progress bars for skills, no cookie-cutter layouts.

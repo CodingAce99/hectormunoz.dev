@@ -1,4 +1,4 @@
-// Hero.tsx — Full-viewport hero section with animated entry and decorative code block
+// Hero.tsx — Full-viewport hero section with animated entry, centered layout
 
 "use client";
 
@@ -6,21 +6,6 @@ import { useReducedMotion, motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
 import { HERO, PERSONAL } from "@/lib/constants";
-
-const codeSnippet = `@Service
-public class AssetMonitor {
-
-  private final SshPort ssh;
-  private final EventBus events;
-
-  public Metrics collect(Asset asset) {
-    var conn = ssh.connect(asset);
-    var raw  = conn.execute("top -bn1");
-    var m    = MetricsParser.parse(raw);
-    events.publish(new MetricsCollected(m));
-    return m;
-  }
-}`;
 
 export function Hero() {
   const reduced = useReducedMotion();
@@ -61,27 +46,18 @@ const item: import("framer-motion").Variants = {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-6 py-24 lg:flex-row lg:items-center lg:gap-16">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-6 py-24 text-center">
 
-        {/* ── Left column: text content ── */}
         <motion.div
-          className="flex flex-1 flex-col gap-6"
+          className="flex flex-col items-center gap-6"
           variants={container}
           initial="hidden"
           animate="visible"
         >
-          {/* Badge */}
-          <motion.div variants={item}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] px-4 py-1.5 text-sm font-medium text-[var(--accent)]">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent)]" />
-              {content.badge}
-            </span>
-          </motion.div>
-
           {/* Name */}
           <motion.p
             variants={item}
-            className="font-heading text-base font-medium text-[var(--text-secondary)] uppercase tracking-wider"
+            className="font-heading text-xl md:text-2xl font-semibold text-[var(--text-primary)] uppercase tracking-wide"
           >
             {PERSONAL.name}
           </motion.p>
@@ -107,13 +83,13 @@ const item: import("framer-motion").Variants = {
           {/* Subtitle */}
           <motion.p
             variants={item}
-            className="max-w-xl text-base text-[var(--text-secondary)] md:text-lg leading-relaxed"
+            className="mx-auto max-w-2xl text-base text-[var(--text-secondary)] md:text-lg leading-relaxed"
           >
             {content.subtitle}
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={item} className="flex flex-wrap gap-4">
+          <motion.div variants={item} className="flex flex-wrap justify-center gap-4">
             <Button variant="primary" href={content.cta.primary.href}>
               {content.cta.primary.label} →
             </Button>
@@ -121,33 +97,14 @@ const item: import("framer-motion").Variants = {
               {content.cta.secondary.label}
             </Button>
           </motion.div>
-        </motion.div>
 
-        {/* ── Right column: decorative code block (desktop only) ── */}
-        <motion.div
-          className="hidden lg:flex lg:w-[420px] lg:shrink-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: reduced ? 1 : 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <div
-            className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 font-mono text-sm leading-relaxed"
-            style={{ boxShadow: "0 0 40px var(--accent-glow)" }}
-          >
-            {/* Fake traffic lights */}
-            <div className="mb-4 flex gap-1.5">
-              <span className="h-3 w-3 rounded-full bg-red-500/50" />
-              <span className="h-3 w-3 rounded-full bg-yellow-500/50" />
-              <span className="h-3 w-3 rounded-full bg-green-500/50" />
-            </div>
-
-            <pre
-              className="overflow-x-auto whitespace-pre text-[var(--text-secondary)]/60"
-              aria-hidden
-            >
-              {codeSnippet}
-            </pre>
-          </div>
+          {/* Badge */}
+          <motion.div variants={item} className="mt-6">
+            <span className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+              {content.badge}
+            </span>
+          </motion.div>
         </motion.div>
 
       </div>

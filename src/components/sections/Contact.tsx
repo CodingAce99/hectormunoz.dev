@@ -40,9 +40,9 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-28 lg:py-32">
+    <section id="contact" className="pt-12 md:pt-16 lg:pt-20 pb-16 md:pb-20 lg:pb-24">
       <motion.div
-        className="mx-auto max-w-3xl px-6 text-center"
+        className="mx-auto max-w-4xl px-6 text-center"
         variants={container}
         initial="hidden"
         whileInView="visible"

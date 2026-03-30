@@ -51,9 +51,15 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-28 lg:py-32">
+    <section
+      id="projects"
+      className="py-16 md:py-20 lg:py-24"
+      style={{
+        background: "linear-gradient(to bottom, var(--background), var(--surface) 8%, var(--surface) 95%, var(--background))",
+      }}
+    >
       <motion.div
-        className="mx-auto max-w-5xl px-6"
+        className="mx-auto max-w-6xl px-6"
         variants={container}
         initial="hidden"
         whileInView="visible"
@@ -120,22 +126,21 @@ export function Projects() {
 
             {/* Highlights */}
             <motion.div
-              className="grid grid-cols-1 gap-4 md:grid-cols-2"
+              className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6"
               variants={highlightsContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {project.highlights.map((highlight) => (
+              {project.highlights.map((highlight, hIndex) => (
                 <motion.div
-                  key={highlight.title}
-                  className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4 transition-colors duration-300 hover:border-[var(--accent)]/30"
+                  key={hIndex}
                   variants={highlightItem}
                 >
-                  <h4 className="mb-1 font-heading text-sm font-semibold text-[var(--text-primary)]">
+                  <h4 className="font-heading text-sm font-semibold text-[var(--text-primary)] mb-1">
                     {highlight.title}
                   </h4>
-                  <p className="text-xs leading-relaxed text-[var(--text-secondary)] md:text-sm">
+                  <p className="text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed">
                     {highlight.description}
                   </p>
                 </motion.div>

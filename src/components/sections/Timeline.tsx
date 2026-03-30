@@ -31,8 +31,8 @@ export function Timeline() {
   };
 
   return (
-    <section id="background" className="py-20 md:py-28 lg:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+    <section id="background" className="py-16 md:py-20 lg:py-24">
+      <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
           label={content.sectionLabel}
           title={content.sectionTitle}

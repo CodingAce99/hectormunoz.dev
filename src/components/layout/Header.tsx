@@ -7,6 +7,8 @@ import { useLanguage } from "@/context/LanguageContext";
 import { PERSONAL, NAV } from "@/lib/constants";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { AnimatePresence, motion } from "framer-motion";
+import { SiGithub } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export function Header() {
   const { locale } = useLanguage();
@@ -17,7 +19,7 @@ export function Header() {
   const navLinks = NAV[locale].links;
 
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 100);
+    const handleScroll = () => setVisible(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -38,9 +40,9 @@ export function Header() {
         {/* Name / scroll to top */}
         <a
           href={isHome ? "#" : "/"}
-          className="font-heading text-sm font-semibold tracking-wide text-[var(--text-primary)]"
+          className="text-base font-heading font-bold text-[var(--accent)] tracking-wider"
         >
-          {PERSONAL.name}
+          HM
         </a>
 
         {/* Desktop nav */}
@@ -56,8 +58,29 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Right side: mobile hamburger + language toggle */}
+        {/* Right side: social icons + language toggle */}
         <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href={PERSONAL.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
+              aria-label="GitHub"
+            >
+              <SiGithub size={16} />
+            </a>
+            <a
+              href={PERSONAL.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-200"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn size={16} />
+            </a>
+          </div>
+
           {/* Hamburger (mobile only) */}
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -124,6 +147,14 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
+              <div className="flex items-center justify-center gap-6 mt-4">
+                <a href={PERSONAL.github} target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors" aria-label="GitHub">
+                  <SiGithub size={20} />
+                </a>
+                <a href={PERSONAL.linkedin} target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors" aria-label="LinkedIn">
+                  <FaLinkedinIn size={20} />
+                </a>
+              </div>
             </div>
           </motion.nav>
         )}

@@ -41,8 +41,14 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 md:py-28 lg:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+    <section
+      id="about"
+      className="py-16 md:py-20 lg:py-24"
+      style={{
+        background: "linear-gradient(to bottom, var(--background), var(--surface) 8%, var(--surface) 92%, var(--background))",
+      }}
+    >
+      <div className="mx-auto max-w-4xl px-6">
 
         {/* SectionHeading is a Server Component — safe to use inside a client component */}
         <motion.div
@@ -60,7 +66,7 @@ export function About() {
           </motion.div>
 
           {/* Paragraphs container — decorative left border visible on desktop only */}
-          <div className="md:border-l-2 md:border-[var(--accent)] md:border-opacity-40 md:pl-6">
+          <div className="md:border-l-2 md:border-[var(--accent)]/25 md:pl-6">
             <div className="space-y-6">
               {content.paragraphs.map((paragraph, index) => (
                 <motion.p
